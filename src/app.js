@@ -1,6 +1,6 @@
 import express, { json } from "express";
 import cors from "cors";
-import { __prod__ } from "./constants";
+import { __prod__ } from "./constants.js";
 
 const app = express();
 
