@@ -1,5 +1,7 @@
 import express, { json } from "express";
 import cors from "cors";
+
+import { notFound, errorHandler } from "./middleware/error.js";
 import { __prod__ } from "./constants.js";
 
 const app = express();
@@ -21,5 +23,8 @@ app.use(
 app.use(json());
 
 app.set("trust proxy", 1);
+
+app.use(notFound);
+app.use(errorHandler);
 
 export default app;
