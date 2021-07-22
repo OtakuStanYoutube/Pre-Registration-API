@@ -1,7 +1,13 @@
 import express, { json } from "express";
 import cors from "cors";
 
+// Middlewares
 import { notFound, errorHandler } from "./middleware/error.js";
+
+// Routes
+import { router as registrationRoutes } from "./routes/registration.js";
+
+// Constants
 import { __prod__ } from "./constants.js";
 
 const app = express();
@@ -24,9 +30,6 @@ app.use(json());
 
 app.set("trust proxy", 1);
 
-app.use(notFound);
-app.use(errorHandler);
-
 if (!__prod__) {
   app.get("/", (_req, res) => {
     res.status(201).json({
@@ -34,5 +37,11 @@ if (!__prod__) {
     });
   });
 }
+
+// Registration Routes
+app.use("/api/v1/", registrationRoutes);
+
+app.use(notFound);
+app.use(errorHandler);
 
 export default app;
