@@ -5,7 +5,9 @@ import {
   getNotionDatabaseEntry,
 } from "../util/notion.js";
 
-import { mailUser } from "../util/sendEmail.js";
+// import { mailUser } from "../util/sendEmail.js";
+
+import { sendDiscordMessage } from "../util/discord.js";
 
 import { emailRegEx } from "../constants.js";
 
@@ -35,7 +37,10 @@ export const createRegistration = async (req, res) => {
         const database = await createNotionDatabase(newUser);
 
         if (database) {
-          mailUser(email);
+          // mailUser(email);
+          const response = await sendDiscordMessage();
+
+          console.log(response);
 
           return res.status(200).json({
             status: true,
