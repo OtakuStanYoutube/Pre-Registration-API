@@ -64,7 +64,7 @@ export const getNotionDatabaseEntry = async (email) => {
       filter: {
         property: "Email",
         text: {
-          contains: email,
+          equals: email,
         },
       },
     });

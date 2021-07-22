@@ -1,5 +1,9 @@
 import { v4 as uuidV4 } from "uuid";
-import { getNotionDatabase, createNotionDatabase } from "../util/notion.js";
+import {
+  getNotionDatabase,
+  createNotionDatabase,
+  getNotionDatabaseEntry,
+} from "../util/notion.js";
 
 export const getRegistrations = async (_req, res) => {
   const database = await getNotionDatabase();
@@ -16,6 +20,11 @@ export const createRegistration = async (req, res) => {
 
   try {
     if (email) {
+      const existingUser = await getNotionDatabaseEntry();
+
+      if (existingUser) {
+        return res.status(200).json({ message: "User Already Exists" });
+      }
       const userId = uuidV4();
       const newUser = {
         ID: userId,
