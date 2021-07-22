@@ -35,7 +35,7 @@ export const createNotionDatabase = async ({ ID, email }) => {
         ],
       },
       [process.env.NOTION_USER_EMAIL]: {
-        rich_text: [
+        email: [
           {
             type: "text",
             text: {
