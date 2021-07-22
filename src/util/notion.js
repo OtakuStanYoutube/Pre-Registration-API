@@ -9,5 +9,6 @@ export const getNotionDatabase = async () => {
     database_id: process.env.DATABASE_ID,
   });
 
+  console.log("Recieved Response from Notion")
   console.log(response);
 };
