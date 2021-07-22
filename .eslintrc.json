@@ -4,8 +4,7 @@
       "es2021": true,
       "node": true
     },
-    "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
-    "parser": "@typescript-eslint/parser",
+    "extends": ["eslint:recommended"],
     "parserOptions": {
       "ecmaFeatures": {
         "jsx": true
@@ -13,11 +12,7 @@
       "ecmaVersion": 12,
       "sourceType": "module"
     },
-    "plugins": ["@typescript-eslint/eslint-plugin"],
     "rules": {
-      "@typescript-eslint/no-empty-interface": "off",
-      "@typescript-eslint/explicit-module-boundary-types": "off",
-      "@typescript-eslint/member-delimiter-style": "off",
       "no-empty": "off",
       "no-empty-pattern": "off",
       "react/prop-types": "off",
@@ -267,8 +262,6 @@
       "yield-star-spacing": "error",
       "yoda": "error",
       "@typescript-eslint/ban-types": "warn",
-      "react/react-in-jsx-scope": "off",
-      "@typescript-eslint/no-empty-function": "off",
-      "@typescript-eslint/ban-ts-comment": "warn"
+      "react/react-in-jsx-scope": "off"
     }
 }
