@@ -20,22 +20,23 @@ export const createRegistration = async (req, res) => {
 
   try {
     if (email) {
-      const existingUser = await getNotionDatabaseEntry();
+      const { results } = await getNotionDatabaseEntry(email);
 
-      if (existingUser) {
-        return res.status(200).json({ message: "User Already Exists" });
-      }
-      const userId = uuidV4();
-      const newUser = {
-        ID: userId,
-        email,
-      };
-      const database = await createNotionDatabase(newUser);
+      if (results.length === 0) {
+        const userId = uuidV4();
+        const newUser = {
+          ID: userId,
+          email,
+        };
+        const database = await createNotionDatabase(newUser);
 
-      if (database) {
-        res
-          .status(200)
-          .json({ message: "Successfully created the database", database });
+        if (database) {
+          return res
+            .status(200)
+            .json({ status: true, message: "Successfully created the database", database });
+        }
+      } else {
+        return res.status(401).json({ status: false, message: "User Already Exists" });
       }
     }
   } catch (error) {
