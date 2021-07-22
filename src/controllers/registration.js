@@ -38,7 +38,7 @@ export const createRegistration = async (req, res) => {
 
         if (database) {
           // mailUser(email);
-          const response = await sendDiscordMessage();
+          const response = await sendDiscordMessage(email);
 
           console.log(response);
 
