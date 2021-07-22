@@ -12,8 +12,6 @@ export const sendDiscordMessage = async (email) => {
       headers: { "Content-Type": "application/json" },
     });
 
-    console.log(response);
-
     return response;
   } catch (error) {
     console.log(error);
