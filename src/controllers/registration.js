@@ -5,6 +5,8 @@ import {
   getNotionDatabaseEntry,
 } from "../util/notion.js";
 
+import { emailRegEx } from "../constants.js";
+
 export const getRegistrations = async (_req, res) => {
   const database = await getNotionDatabase();
 
@@ -19,7 +21,7 @@ export const createRegistration = async (req, res) => {
   const { email } = req.body;
 
   try {
-    if (email) {
+    if (email.match(emailRegEx)) {
       const { results } = await getNotionDatabaseEntry(email);
 
       if (results.length === 0) {
@@ -31,13 +33,19 @@ export const createRegistration = async (req, res) => {
         const database = await createNotionDatabase(newUser);
 
         if (database) {
-          return res
-            .status(200)
-            .json({ status: true, message: "Successfully created the database", database });
+          return res.status(200).json({
+            status: true,
+            message: "Successfully created the database",
+            database,
+          });
         }
       } else {
-        return res.status(401).json({ status: false, message: "User Already Exists" });
+        return res
+          .status(401)
+          .json({ status: false, message: "User Already Exists" });
       }
+    } else {
+      return res.status(401).json({ status: false, message: "Invalid Email" });
     }
   } catch (error) {
     res.status(401).json({ status: false, message: "Something went wrong!!" });
