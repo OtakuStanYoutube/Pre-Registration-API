@@ -6,14 +6,11 @@ export const sendDiscordMessage = async (email) => {
   };
 
   try {
-    const response = await fetch(
-      "https://discord.com/api/webhooks/867744066761392159/TVDmuzBFqNo9EZBtbt9Tw0aOvoXWBwEM0fFHt1nkheDWwQL30RszXUXCgIcA2YJ52aZY",
-      {
-        method: "post",
-        body: JSON.stringify(body),
-        headers: { "Content-Type": "application/json" },
-      },
-    );
+    const response = await fetch(process.env.DISCORD_URI, {
+      method: "post",
+      body: JSON.stringify(body),
+      headers: { "Content-Type": "application/json" },
+    });
 
     console.log(response);
 
