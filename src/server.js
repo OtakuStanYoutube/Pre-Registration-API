@@ -1,3 +1,6 @@
+import { config } from "dotenv";
+config();
+
 import app from "./app.js";
 
 const ENV = process.env.NODE_ENV || "development";
