@@ -52,3 +52,27 @@ export const createNotionDatabase = async ({ ID, email }) => {
 
   return response;
 };
+
+export const getNotionDatabaseEntry = async (email) => {
+  const notion = new Client({
+    auth: process.env.NOTION_API_KEY,
+  });
+
+  try {
+    const userPage = await notion.databases.query({
+      database_id: process.env.DATABASE_ID,
+      filter: {
+        property: "Email",
+        text: {
+          contains: email,
+        },
+      },
+    });
+
+    console.log(userPage);
+
+    return userPage;
+  } catch (error) {
+    console.error(error);
+  }
+};
