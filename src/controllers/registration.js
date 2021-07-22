@@ -1,6 +1,6 @@
 import { getNotionDatabase } from "../util/notion.js";
 
-export const getRegistration = (_req, res) => {
+export const getRegistrations = (_req, res) => {
   getNotionDatabase();
 
   //   if (database) {
