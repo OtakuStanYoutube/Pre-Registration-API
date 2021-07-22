@@ -1,4 +1,4 @@
-import app from "./app";
+import app from "./app.js";
 
 const ENV = process.env.NODE_ENV || "development";
 const PORT = process.env.PORT || 5000;
