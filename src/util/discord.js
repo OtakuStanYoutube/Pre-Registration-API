@@ -2,7 +2,7 @@ import fetch from "node-fetch";
 
 export const sendDiscordMessage = async (email) => {
   const body = {
-    content: `Hurray!! An idiot ${email} registered with LinkedList`,
+    content: `Hurray!! An idiot\n > ${email}\n registered with LinkedList`,
   };
 
   try {
