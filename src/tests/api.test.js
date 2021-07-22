@@ -1,7 +1,7 @@
 import app from "../app";
 import request from "supertest";
 
-describe("testing get endpoints", () => {
+describe("testing get Api endpoints", () => {
   it("should create a new post", async () => {
     const res = await request(app).get("/");
 
