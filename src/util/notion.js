@@ -47,9 +47,6 @@ export const createNotionDatabase = async ({ ID, email }) => {
     },
   });
 
-  console.log("Sucessfully created the User");
-  console.log(response);
-
   return response;
 };
 
@@ -68,8 +65,6 @@ export const getNotionDatabaseEntry = async (email) => {
         },
       },
     });
-
-    console.log(userPage);
 
     return userPage;
   } catch (error) {
