@@ -5,6 +5,8 @@ import {
   getNotionDatabaseEntry,
 } from "../util/notion.js";
 
+import { mailUser } from "../util/sendEmail.js";
+
 import { emailRegEx } from "../constants.js";
 
 export const getRegistrations = async (_req, res) => {
@@ -33,6 +35,8 @@ export const createRegistration = async (req, res) => {
         const database = await createNotionDatabase(newUser);
 
         if (database) {
+          mailUser(email);
+
           return res.status(200).json({
             status: true,
             message: "Successfully created the database",
