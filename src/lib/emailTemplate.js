@@ -36,8 +36,6 @@ export const emailTemplate = () => {
           max-width: 800px;
           min-width: 500px;
           height: 100%;
-          max-height: 900px;
-          min-height: 700px;
           background-color: #2c2a36;
           /* padding: 0 56px; */
         }

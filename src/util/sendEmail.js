@@ -1,6 +1,8 @@
 import nodemailer from "nodemailer";
+import { emailTemplate } from "../lib/emailTemplate.js";
 
 export const mailUser = async (email) => {
+  const mailTemplate = emailTemplate();
   const transporter = nodemailer.createTransport({
     host: "smtp.sendgrid.net",
     post: "465",
@@ -14,7 +16,7 @@ export const mailUser = async (email) => {
     from: "redlolicon99@gmail.com",
     to: email,
     subject: "Account Verification",
-    html: ``,
+    html: mailTemplate,
   };
 
   await transporter.sendMail(mailOptions, (error, message) => {
