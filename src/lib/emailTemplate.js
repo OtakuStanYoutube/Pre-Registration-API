@@ -19,7 +19,7 @@ export const emailTemplate = () => {
           margin: 0;
           padding: 0;
           font-family: "Open Sans", sans-serif;
-          background-color: #d7d7d7;
+          background-color: #000000;
           color: white;
         }
   
@@ -36,7 +36,7 @@ export const emailTemplate = () => {
           max-width: 800px;
           min-width: 500px;
           height: 100%;
-          background-color: #2c2a36;
+          background-color: #000000;
           /* padding: 0 56px; */
         }
   
@@ -89,7 +89,7 @@ export const emailTemplate = () => {
         margin: 0;
         padding: 0;
         -webkit-text-size-adjust: 100%;
-        background-color: #d7d7d7;
+        background-color: #000000;
         color: white;
       "
     >
