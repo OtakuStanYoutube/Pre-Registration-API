@@ -42,17 +42,22 @@ export const emailTemplate = () => {
           /* padding: 0 56px; */
         }
   
+        .top{
+            height: 100px;
+        }
+  
         .middle {
           text-align: left;
           font-size: 18px;
           font-weight: 600;
           line-height: 23px;
-          /* or 23px */
+          height: 150px;
           letter-spacing: -0.05em;
         }
   
         .bottom {
           width: 100%;
+          height: 70px;
           border-bottom-left-radius: 40px;
           border-bottom-right-radius: 40px;
         }
@@ -62,7 +67,10 @@ export const emailTemplate = () => {
           height: 30px;
           margin-right: 15px;
         }
-  
+        .logo{
+            width: 200px;
+            height: 200px;
+        }
         @media only screen and (max-width: 670px) {
           .container {
             width: 100%;
@@ -90,7 +98,11 @@ export const emailTemplate = () => {
       <table class="container">
         <tr class="top" align="center">
           <td>
-            <h1><span style="color: #b055e1">Linked</span>List</h1>
+            <img
+              class="logo"
+              src="https://raw.githubusercontent.com/OtakuStanYoutube/LinkedList/main/assets/logo/logo.png"
+              alt="Twitter"
+            />
           </td>
         </tr>
         <tr class="middle" align="center">
@@ -104,12 +116,16 @@ export const emailTemplate = () => {
               their proof of work.<br />
               Please have patience, we will be reaching out to you soon with lots
               of surprises. Meanwhile you can check us out on
-              <a style="color: #b055e1" href="https://github.com/OtakuStanYoutube/LinkedList"
+              <a
+                style="color: #b055e1"
+                href="https://github.com/OtakuStanYoutube/LinkedList"
                 ><u>GitHub</u></a
               >
-              and <a style="color: #b055e1" href="https://twitter.com/LinkedList_"><u>Twitter</u></a
+              and
+              <a style="color: #b055e1" href="https://twitter.com/LinkedList_"
+                ><u>Twitter</u></a
               >.<br /><br />
-              See you soon,<br /> 
+              See you soon,<br />
               Team LinkedList
             </p>
           </td>
@@ -117,15 +133,19 @@ export const emailTemplate = () => {
         <tr class="bottom" align="center">
           <td>
             <a href="https://twitter.com/LinkedList_"
-              ><img src="https://github.com/OtakuStanYoutube/Pre-Registration-API/blob/main/images/twitter.png?raw=true" alt="Twitter"
-            ></a>
+              ><img
+                src="https://github.com/OtakuStanYoutube/Pre-Registration-API/blob/main/images/twitter.png?raw=true"
+                alt="Twitter"
+            /></a>
             <a href="https://github.com/OtakuStanYoutube/LinkedList"
-              ><img src="https://github.com/OtakuStanYoutube/Pre-Registration-API/blob/main/images/github.png?raw=true" alt="GitHub"
-            ></a>
+              ><img
+                src="https://github.com/OtakuStanYoutube/Pre-Registration-API/blob/main/images/github.png?raw=true"
+                alt="GitHub"
+            /></a>
           </td>
         </tr>
       </table>
     </body>
-  </html>
+  </html>  
   `;
 };
