@@ -6,14 +6,14 @@ export const mailUser = async (email) => {
   const transporter = nodemailer.createTransport({
     host: "smtp.sendgrid.net",
     port: "465",
-    secure: false,
+    secure: true,
     auth: {
       user: process.env.EMAIL_AUTH,
       pass: process.env.EMAIL_PASSWORD,
     },
   });
   const mailOptions = {
-    from: "redlolicon99@gmail.com",
+    from: "lnkedlst@gmail.com",
     to: email,
     subject: "Account Verification",
     html: mailTemplate,
