@@ -98,8 +98,8 @@ export const emailTemplate = () => {
           <td>
             <img
               class="logo"
-              src="https://raw.githubusercontent.com/OtakuStanYoutube/LinkedList/main/assets/logo/logo.png"
-              alt="Twitter"
+              src="https://raw.githubusercontent.com/OtakuStanYoutube/Pre-Registration-API/main/images/logo.png"
+              alt="Logo"
             />
           </td>
         </tr>
