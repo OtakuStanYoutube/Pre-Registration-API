@@ -18,8 +18,6 @@ app.use(
     maxAge: __prod__ ? 86400 : undefined,
     allowedHeaders: ["Content-Type", "Authorization"],
     exposedHeaders: [
-      "access-token",
-      "refresh-token",
       "content-type",
       "content-length",
     ],
