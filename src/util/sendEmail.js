@@ -5,7 +5,7 @@ export const mailUser = async (email) => {
   const mailTemplate = emailTemplate();
   const transporter = nodemailer.createTransport({
     host: "smtp.sendgrid.net",
-    post: "465",
+    port: "465",
     secure: false,
     auth: {
       user: process.env.EMAIL_AUTH,
