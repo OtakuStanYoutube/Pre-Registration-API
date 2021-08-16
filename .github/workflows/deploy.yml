@@ -39,7 +39,7 @@ jobs:
                     -e NOTION_USER_EMAIL=${{secrets.NOTION_USER_EMAIL}} \
                     -e EMAIL_AUTH=${{secrets.EMAIL_AUTH}} \
                     -e EMAIL_PASSWORD=${{secrets.EMAIL_PASSWORD}} \
-                    -e DISCORD_URI=${{secrets.DISCORD_URI} \
+                    -e DISCORD_URI=${{secrets.DISCORD_URI}
                     ${{secrets.CONTAINER_NAME}}
 
             echo 'Sucessfully deployed to server'
