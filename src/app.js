@@ -31,7 +31,7 @@ app.set("trust proxy", 1);
 if (!__prod__) {
   app.get("/", (_req, res) => {
     res.status(201).json({
-      message: "Hello World from the Pre-registion API",
+      message: "Hello World from Pre-registion API",
     });
   });
 }
