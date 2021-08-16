@@ -31,6 +31,6 @@ jobs:
             docker build -t ${{secrets.CONTAINER_NAME}} .
 
             echo 'Running the container'
-            docker run -p 5000:5000 -e PORT=5000 -e NOTION_API_KEY=${{secrets.NOTION_API_KEY}} -e DATABASE_ID=${{secrets.DATABASE_ID}} -e NOTION_USER_ID=${{secrets.NOTION_USER_ID} -e NOTION_USER_EMAIL=${{secrets.NOTION_USER_EMAIL}} -e EMAIL_AUTH=${{secrets.EMAIL_AUTH}} -e EMAIL_PASSWORD=${{secrets.EMAIL_PASSWORD}} -e DISCORD_URI=${{secrets.DISCORD_URI}} ${{secrets.CONTAINER_NAME}}
+            docker run -p 5000:5000 -e PORT=5000 -e NOTION_API_KEY=${{secrets.NOTION_API_KEY}} -e DATABASE_ID=${{secrets.DATABASE_ID}} -e NOTION_USER_ID=${{secrets.NOTION_USER_ID}} -e NOTION_USER_EMAIL=${{secrets.NOTION_USER_EMAIL}} -e EMAIL_AUTH=${{secrets.EMAIL_AUTH}} -e EMAIL_PASSWORD=${{secrets.EMAIL_PASSWORD}} -e DISCORD_URI=${{secrets.DISCORD_URI}} ${{secrets.CONTAINER_NAME}}
 
             echo 'Sucessfully deployed to server'
