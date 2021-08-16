@@ -18,6 +18,6 @@ jobs:
           passphrase: ${{ secrets.SSH_PASSPHRASE }}
 
           script: |
-            mkdir test
-            cd test
+            cd OtakuStan/Pre-Registration-API
+            git pull origin main
             echo 'Deployment successfull to server'
