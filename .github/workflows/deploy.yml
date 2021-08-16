@@ -3,7 +3,7 @@ name: Build & Deploy
 
 on:
   push:
-    branches: [main]
+    branches: [production]
 
 jobs:
   deploy:
@@ -27,37 +27,10 @@ jobs:
             echo 'Removing everything from machine'
             docker system prune -f
 
-      - name: Build
-        uses: appleboy/ssh-action@v0.1.2
-        with:
-          host: ${{secrets.SSH_HOST}}
-          key: ${{secrets.SSH_KEY}}
-          username: ${{secrets.SSH_USERNAME}}
-          passphrase: ${{ secrets.SSH_PASSPHRASE }}
-
-          script: |
             echo 'Building the container'
             docker build -t ${{secrets.CONTAINER_NAME}} .
 
-      - name: Deploy
-        uses: appleboy/ssh-action@v0.1.2
-        with:
-          host: ${{secrets.SSH_HOST}}
-          key: ${{secrets.SSH_KEY}}
-          username: ${{secrets.SSH_USERNAME}}
-          passphrase: ${{ secrets.SSH_PASSPHRASE }}
-
-          script: |
             echo 'Running the container'
             docker run -p 5000:5000 -e PORT=5000 -e NOTION_API_KEY=${{secrets.NOTION_API_KEY}} -e DATABASE_ID=${{secrets.DATABASE_ID}} -e NOTION_USER_ID=${{secrets.NOTION_USER_ID}} -e NOTION_USER_EMAIL=${{secrets.NOTION_USER_EMAIL}} -e EMAIL_AUTH=${{secrets.EMAIL_AUTH}} -e EMAIL_PASSWORD=${{secrets.EMAIL_PASSWORD}} -e DISCORD_URI=${{secrets.DISCORD_URI}} ${{secrets.CONTAINER_NAME}}
 
-      - name: Publish
-        uses: appleboy/ssh-action@v0.1.2
-        with:
-          host: ${{secrets.SSH_HOST}}
-          key: ${{secrets.SSH_KEY}}
-          username: ${{secrets.SSH_USERNAME}}
-          passphrase: ${{ secrets.SSH_PASSPHRASE }}
-
-          script: |
             echo 'Sucessfully deployed to server'
