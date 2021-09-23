@@ -4,9 +4,7 @@ import { emailTemplate } from "../lib/emailTemplate.js";
 export const mailUser = async (email) => {
   const mailTemplate = emailTemplate();
   const transporter = nodemailer.createTransport({
-    host: "smtp.sendgrid.net",
-    port: "465",
-    secure: true,
+    service: "SendinBlue",
     auth: {
       user: process.env.EMAIL_AUTH,
       pass: process.env.EMAIL_PASSWORD,
