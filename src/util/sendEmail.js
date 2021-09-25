@@ -5,6 +5,7 @@ export const mailUser = async (email) => {
   const mailTemplate = emailTemplate();
   const transporter = nodemailer.createTransport({
     service: "SendinBlue",
+    port: 465,
     auth: {
       user: process.env.EMAIL_AUTH,
       pass: process.env.EMAIL_PASSWORD,
