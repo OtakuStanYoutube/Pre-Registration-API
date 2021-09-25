@@ -61,8 +61,8 @@ export const emailTemplate = () => {
         }
   
         img {
-          width: 30px;
-          height: 30px;
+          width: 300px;
+          height: 60px;
           margin-right: 15px;
         }
         .logo{
