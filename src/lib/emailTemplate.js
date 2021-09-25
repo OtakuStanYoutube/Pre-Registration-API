@@ -67,7 +67,7 @@ export const emailTemplate = () => {
         }
         .logo{
             width: 300px;
-            height: 60px;
+            height: 110px;
             margin-top: 40px;
         }
         @media only screen and (max-width: 670px) {
