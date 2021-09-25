@@ -61,13 +61,14 @@ export const emailTemplate = () => {
         }
   
         img {
-          width: 300px;
-          height: 60px;
+          width: 30px;
+          height: 30px;
           margin-right: 15px;
         }
         .logo{
-            width: 200px;
-            height: 200px;
+            width: 300px;
+            height: 60px;
+            margin-top: 40px;
         }
         @media only screen and (max-width: 670px) {
           .container {
