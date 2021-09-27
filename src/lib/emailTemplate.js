@@ -108,9 +108,9 @@ export const emailTemplate = () => {
           <td>
             <p style="padding: 0 56px">
               Hello User,<br />
-              Welcome to LinkedList. Just quickly wanted to thank you for
-              registering for the close beta program of LinkedList. We are really
-              glad to have you here. LinkedList is a platform dedicated to all the
+              Welcome to LinkedLyst. Just quickly wanted to thank you for
+              registering for the close beta program of LinkedLyst. We are really
+              glad to have you here. LinkedLyst is a platform dedicated to all the
               creators, designers, developers and social media influencers to host
               their proof of work.<br />
               Please have patience, we will be reaching out to you soon with lots
@@ -121,11 +121,11 @@ export const emailTemplate = () => {
                 ><u>GitHub</u></a
               >
               and
-              <a style="color: #b055e1" href="https://twitter.com/LinkedList_"
+              <a style="color: #b055e1" href="https://twitter.com/LinkedLyst_"
                 ><u>Twitter</u></a
               >.<br /><br />
               See you soon,<br />
-              Team LinkedList
+              Team LinkedLyst
             </p>
           </td>
         </tr>
