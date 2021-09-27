@@ -14,7 +14,7 @@ export const mailUser = async (email) => {
   const mailOptions = {
     from: "lnkedlst@gmail.com",
     to: email,
-    subject: "Account Verification",
+    subject: "LinkedLyst Registration",
     html: mailTemplate,
   };
 
